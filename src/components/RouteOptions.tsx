@@ -26,6 +26,22 @@ const RouteOptions = ({ onRouteSelect, onBack }: RouteOptionsProps) => {
       difficulty: 'easy',
       safetyScore: 8,
       accessibilityScore: 9,
+      directions: {
+        totalTime: '12 minutes',
+        totalDistance: '0.8 miles',
+        description: 'This route avoids poorly lit alleys and takes 12 minutes. There are 2 street crossings with traffic lights.',
+        steps: [
+          'Head north on Cedar Street for 0.2 miles (about a 5-minute walk past the coffee shop with the red awning)',
+          'Turn right onto Oak Avenue and walk for 0.3 miles - you\'ll see a lovely park with a fountain on your left',
+          'Cross at the traffic light by the bookstore and continue straight',
+          'Turn left onto Maple Boulevard just after the flower shop with the blue door',
+          'Your destination will be on the right, next to the bakery with the striped canopy'
+        ]
+      },
+      localTips: [{
+        title: 'Local Tip',
+        content: 'The crosswalk at Oak Avenue can get busy during rush hour. If you\'re walking between 5-6pm, you might want to use the pedestrian bridge about 100ft further down the street. Also, the park along the route has public water fountains if you need a quick break!'
+      }]
     },
     {
       id: '2',
@@ -37,6 +53,22 @@ const RouteOptions = ({ onRouteSelect, onBack }: RouteOptionsProps) => {
       difficulty: 'moderate',
       safetyScore: 7,
       accessibilityScore: 8,
+      directions: {
+        totalTime: '18 minutes',
+        totalDistance: '1.1 miles',
+        description: 'A scenic route through Riverside Park with beautiful views and plenty of shade.',
+        steps: [
+          'Start on Cedar Street and head towards the park entrance',
+          'Follow the main path through Riverside Park for 0.4 miles',
+          'Take the riverside trail when you reach the fork in the path',
+          'Exit the park at the north gate and continue on Oak Avenue',
+          'Your destination will be on the left after the park'
+        ]
+      },
+      localTips: [{
+        title: 'Local Tip',
+        content: 'The park has beautiful cherry blossoms in spring and colorful foliage in fall. The riverside trail can get muddy after rain, so consider the main path if it\'s been wet recently.'
+      }]
     },
     {
       id: '3',
@@ -48,6 +80,22 @@ const RouteOptions = ({ onRouteSelect, onBack }: RouteOptionsProps) => {
       difficulty: 'easy',
       safetyScore: 9,
       accessibilityScore: 10,
+      directions: {
+        totalTime: '15 minutes',
+        totalDistance: '0.9 miles',
+        description: 'A fully accessible route with no stairs, gentle slopes, and wide sidewalks.',
+        steps: [
+          'Begin on Cedar Street and follow the wide sidewalk',
+          'Take the ramp at the corner of Oak Avenue',
+          'Continue on the accessible path through the plaza',
+          'Use the pedestrian crossing with audio signals',
+          'Your destination will be on the right with a wheelchair-accessible entrance'
+        ]
+      },
+      localTips: [{
+        title: 'Local Tip',
+        content: 'The plaza has several benches and rest areas along the way. There\'s also an accessible public restroom near the fountain if needed.'
+      }]
     }
   ];
 

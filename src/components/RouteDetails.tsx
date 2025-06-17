@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { MapPin, Clock, Users, Bell, ArrowLeft, Share2, Download, Navigation } from 'lucide-react';
+import { MapPin, Clock, Users, Bell, ArrowLeft, Share2, Download, Navigation, Lightbulb, ArrowRight } from 'lucide-react';
 import { RouteOption } from '@/pages/Index';
 import MapView from './MapView';
 
@@ -112,6 +112,57 @@ const RouteDetails = ({ route, onBack, onStartNavigation }: RouteDetailsProps) =
             </div>
           </Card>
         </div>
+
+        {/* Step-by-Step Directions */}
+        <Card className="p-6 rounded-lg border-2 border-valkyrie-stone mb-8">
+          <div className="flex items-center justify-between mb-6">
+            <h3 className="text-xl font-medium text-valkyrie-charcoal font-playfair">
+              Step-by-Step Directions
+            </h3>
+            <div className="flex items-center space-x-4 text-valkyrie-warm-grey">
+              <span className="flex items-center">
+                <Clock className="h-4 w-4 mr-1" />
+                {route.directions.totalTime}
+              </span>
+              <span className="flex items-center">
+                <MapPin className="h-4 w-4 mr-1" />
+                {route.directions.totalDistance}
+              </span>
+            </div>
+          </div>
+          
+          <p className="text-valkyrie-warm-grey mb-6">
+            {route.directions.description}
+          </p>
+
+          <div className="space-y-4">
+            {route.directions.steps.map((step, index) => (
+              <div key={index} className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-valkyrie-cream flex items-center justify-center text-valkyrie-charcoal font-medium">
+                  {index + 1}
+                </div>
+                <p className="text-valkyrie-charcoal leading-relaxed">{step}</p>
+              </div>
+            ))}
+          </div>
+        </Card>
+
+        {/* Local Tips */}
+        {route.localTips && route.localTips.length > 0 && (
+          <Card className="p-6 rounded-lg border-2 border-valkyrie-stone mb-8 bg-valkyrie-cream/30">
+            <div className="flex items-start space-x-4">
+              <Lightbulb className="h-6 w-6 text-valkyrie-terracotta flex-shrink-0 mt-1" />
+              <div>
+                <h3 className="text-xl font-medium text-valkyrie-charcoal font-playfair mb-2">
+                  {route.localTips[0].title}
+                </h3>
+                <p className="text-valkyrie-warm-grey leading-relaxed">
+                  {route.localTips[0].content}
+                </p>
+              </div>
+            </div>
+          </Card>
+        )}
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">

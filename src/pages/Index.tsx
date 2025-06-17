@@ -22,6 +22,16 @@ export type RouteOption = {
   difficulty: 'easy' | 'moderate' | 'challenging';
   safetyScore: number;
   accessibilityScore: number;
+  directions: {
+    steps: string[];
+    totalTime: string;
+    totalDistance: string;
+    description: string;
+  };
+  localTips?: {
+    title: string;
+    content: string;
+  }[];
 };
 
 const Index = () => {
