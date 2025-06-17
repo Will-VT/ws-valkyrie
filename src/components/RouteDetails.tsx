@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { MapPin, Clock, Users, Bell, ArrowLeft, Share2, Download, Navigation, Lightbulb, ArrowRight } from 'lucide-react';
+import { MapPin, Clock, Users, Bell, ArrowLeft, Share2, Download, Navigation, Lightbulb } from 'lucide-react';
 import { RouteOption } from '@/pages/Index';
 import MapView from './MapView';
 
