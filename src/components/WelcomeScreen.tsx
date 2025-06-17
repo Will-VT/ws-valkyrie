@@ -1,8 +1,7 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { MapPin } from 'lucide-react';
+import { LucideAccessibility, LucideCoffee, MapPin, Rainbow } from 'lucide-react';
 
 interface WelcomeScreenProps {
   onStartPlanning: (context: string) => void;
@@ -45,15 +44,14 @@ const WelcomeScreen = ({ onStartPlanning }: WelcomeScreenProps) => {
           muted
           playsInline
           className="w-full h-full object-cover opacity-80"
-          style={{ filter: 'brightness(0.4) contrast(1.2) sepia(0.1)' }}
+          style={{ filter: 'brightness(0.8) contrast(1.2) sepia(0.1)' }}
           onError={(e) => {
             console.log('Video failed to load:', e);
             // Hide video element if it fails to load
             e.currentTarget.style.display = 'none';
           }}
         >
-          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
-          <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4" />
+          <source src="https://assets.mixkit.co/videos/4893/4893-720.mp4" type="video/mp4" />
         </video>
         
         {/* Overlay for better text readability */}
@@ -74,7 +72,7 @@ const WelcomeScreen = ({ onStartPlanning }: WelcomeScreenProps) => {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center mb-8">
             <img 
-              src="/lovable-uploads/c871c807-ca87-44e5-9e92-0a07b769c7a0.png" 
+              src="/valkyrie-logo.png" 
               alt="Valkyrie Logo" 
               className="w-16 h-16 mr-4 drop-shadow-lg"
             />
@@ -103,7 +101,7 @@ const WelcomeScreen = ({ onStartPlanning }: WelcomeScreenProps) => {
                   <Input
                     placeholder="Where are you starting from?"
                     value={from}
-                    onChange={(e) => setFrom(e.target.value)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setFrom(e.target.value)}
                     className="pl-14 h-14 text-lg bg-white border-2 border-valkyrie-stone focus:border-valkyrie-charcoal rounded-lg"
                   />
                   <Button
@@ -121,7 +119,7 @@ const WelcomeScreen = ({ onStartPlanning }: WelcomeScreenProps) => {
                   <Input
                     placeholder="Where would you like to go?"
                     value={to}
-                    onChange={(e) => setTo(e.target.value)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setTo(e.target.value)}
                     className="pl-14 h-14 text-lg bg-white border-2 border-valkyrie-stone focus:border-valkyrie-charcoal rounded-lg"
                   />
                 </div>
@@ -143,7 +141,7 @@ const WelcomeScreen = ({ onStartPlanning }: WelcomeScreenProps) => {
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           <div className="text-center">
             <div className="w-16 h-16 bg-valkyrie-terracotta/90 backdrop-blur-sm rounded-lg flex items-center justify-center mx-auto mb-6 shadow-lg">
-              <MapPin className="w-8 h-8 text-white" />
+              <Rainbow className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-2xl font-medium text-white mb-3 font-playfair drop-shadow-lg">Safety First</h3>
             <p className="text-stone-200 text-base leading-relaxed font-inter drop-shadow-md">Well-lit paths based on real safety data and local knowledge</p>
@@ -151,7 +149,7 @@ const WelcomeScreen = ({ onStartPlanning }: WelcomeScreenProps) => {
           
           <div className="text-center">
             <div className="w-16 h-16 bg-valkyrie-sage/90 backdrop-blur-sm rounded-lg flex items-center justify-center mx-auto mb-6 shadow-lg">
-              <MapPin className="w-8 h-8 text-white" />
+              <LucideAccessibility className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-2xl font-medium text-white mb-3 font-playfair drop-shadow-lg">Universal Access</h3>
             <p className="text-stone-200 text-base leading-relaxed font-inter drop-shadow-md">Step-free routes and mobility-conscious pathfinding</p>
@@ -159,7 +157,7 @@ const WelcomeScreen = ({ onStartPlanning }: WelcomeScreenProps) => {
           
           <div className="text-center">
             <div className="w-16 h-16 bg-valkyrie-navy/90 backdrop-blur-sm rounded-lg flex items-center justify-center mx-auto mb-6 shadow-lg">
-              <MapPin className="w-8 h-8 text-white" />
+              <LucideCoffee className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-2xl font-medium text-white mb-3 font-playfair drop-shadow-lg">Personal Comfort</h3>
             <p className="text-stone-200 text-base leading-relaxed font-inter drop-shadow-md">Routes with the amenities and atmosphere you prefer</p>

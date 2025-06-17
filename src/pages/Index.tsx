@@ -26,11 +26,9 @@ export type RouteOption = {
 
 const Index = () => {
   const [currentStep, setCurrentStep] = useState<'welcome' | 'preferences' | 'routes' | 'details'>('welcome');
-  const [travelContext, setTravelContext] = useState<string>('');
   const [selectedRoute, setSelectedRoute] = useState<RouteOption | null>(null);
 
-  const handleStartPlanning = (context: string) => {
-    setTravelContext(context);
+  const handleStartPlanning = () => {
     setCurrentStep('preferences');
   };
 
@@ -49,6 +47,10 @@ const Index = () => {
     else if (currentStep === 'preferences') setCurrentStep('welcome');
   };
 
+  const handleRouteDetailsBack = () => {
+    setCurrentStep('routes');
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50">
       {currentStep === 'welcome' && (
@@ -57,8 +59,7 @@ const Index = () => {
       
       {currentStep === 'preferences' && (
         <RoutePreferences 
-          travelContext={travelContext}
-          onComplete={handlePreferencesComplete}
+          onSubmit={handlePreferencesComplete}
           onBack={handleBack}
         />
       )}
@@ -73,7 +74,11 @@ const Index = () => {
       {currentStep === 'details' && selectedRoute && (
         <RouteDetails 
           route={selectedRoute}
-          onBack={handleBack}
+          onBack={handleRouteDetailsBack}
+          onStartNavigation={() => {
+            // TODO: Implement navigation start logic
+            console.log('Starting navigation');
+          }}
         />
       )}
     </div>

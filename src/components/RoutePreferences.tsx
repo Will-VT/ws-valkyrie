@@ -81,7 +81,6 @@ const RoutePreferences = ({ onSubmit, onBack }: RoutePreferencesProps) => {
   };
 
   const handleSubmit = () => {
-    const selectedPreferences = preferences.filter(pref => pref.selected);
     // TODO: Pass selected preferences to parent component if needed
     onSubmit();
   };

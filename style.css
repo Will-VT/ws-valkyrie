@@ -1,0 +1,179 @@
+ailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 258 84% 67%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 258 84% 67%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 258 84% 67%;
+
+    --radius: 0.5rem;
+
+    /* Modern House inspired palette */
+    --valkyrie-charcoal: 0 0% 15%;
+    --valkyrie-stone: 30 8% 85%;
+    --valkyrie-sage: 140 15% 65%;
+    --valkyrie-terracotta: 15 60% 50%;
+    --valkyrie-cream: 45 30% 96%;
+    --valkyrie-navy: 220 25% 25%;
+    --valkyrie-warm-grey: 30 5% 40%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 258 84% 67%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 258 84% 67%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+  }
+  
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .font-playfair {
+    font-family: 'Playfair Display', serif;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+  }
+
+  p, span, div {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-valkyrie-charcoal {
+    color: hsl(var(--valkyrie-charcoal));
+  }
+  
+  .text-valkyrie-stone {
+    color: hsl(var(--valkyrie-stone));
+  }
+  
+  .text-valkyrie-sage {
+    color: hsl(var(--valkyrie-sage));
+  }
+  
+  .text-valkyrie-terracotta {
+    color: hsl(var(--valkyrie-terracotta));
+  }
+  
+  .text-valkyrie-cream {
+    color: hsl(var(--valkyrie-cream));
+  }
+  
+  .text-valkyrie-navy {
+    color: hsl(var(--valkyrie-navy));
+  }
+  
+  .text-valkyrie-warm-grey {
+    color: hsl(var(--valkyrie-warm-grey));
+  }
+  
+  .bg-valkyrie-charcoal {
+    background-color: hsl(var(--valkyrie-charcoal));
+  }
+  
+  .bg-valkyrie-stone {
+    background-color: hsl(var(--valkyrie-stone));
+  }
+  
+  .bg-valkyrie-sage {
+    background-color: hsl(var(--valkyrie-sage));
+  }
+  
+  .bg-valkyrie-terracotta {
+    background-color: hsl(var(--valkyrie-terracotta));
+  }
+  
+  .bg-valkyrie-cream {
+    background-color: hsl(var(--valkyrie-cream));
+  }
+  
+  .bg-valkyrie-navy {
+    background-color: hsl(var(--valkyrie-navy));
+  }
+  
+  .bg-valkyrie-warm-grey {
+    background-color: hsl(var(--valkyrie-warm-grey));
+  }
+  
+  .border-valkyrie-charcoal {
+    border-color: hsl(var(--valkyrie-charcoal));
+  }
+  
+  .border-valkyrie-stone {
+    border-color: hsl(var(--valkyrie-stone));
+  }
+  
+  .border-valkyrie-sage {
+    border-color: hsl(var(--valkyrie-sage));
+  }
+  
+  .border-valkyrie-terracotta {
+    border-color: hsl(var(--valkyrie-terracotta));
+  }
+}
