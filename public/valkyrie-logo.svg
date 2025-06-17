@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g>
+    <!-- Wings and helmet -->
+    <path d="M256 120 L156 320 L256 420 L356 320 L256 120Z" stroke="currentColor" stroke-width="24" fill="none"/>
+    <!-- Face profile -->
+    <path d="M256 200 Q270 200 280 210 Q290 220 290 240 Q290 260 280 270 Q270 280 256 280" stroke="currentColor" stroke-width="24" fill="none" stroke-linecap="round"/>
+    <!-- Helmet -->
+    <circle cx="256" cy="240" r="120" stroke="currentColor" stroke-width="24" fill="none"/>
+    <!-- Wings -->
+    <path d="M156 320 L56 220 M356 320 L456 220" stroke="currentColor" stroke-width="24" fill="none"/>
+  </g>
+</svg> 
